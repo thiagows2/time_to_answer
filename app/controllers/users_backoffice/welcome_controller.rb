@@ -1,4 +1,4 @@
 class UsersBackoffice::WelcomeController < UsersBackofficeController
-  def index
+  def index  
   end
 end
