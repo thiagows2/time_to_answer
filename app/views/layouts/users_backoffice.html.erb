@@ -1,25 +1,4 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>TimeToAnswer</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application'%>
-    <%= javascript_include_tag 'application' %>
-  </head>
-
-  <body>
-    <h1>LAYOUT USERS BACKOFFICE</h1>
-    <%= yield %>
-  </body>
-</html>
-
-
-
-
-
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,19 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>TimeToAnswer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag    'application'%>
+    <%= stylesheet_link_tag    'users_backoffice'%>
 
-    <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- jQuery custom content scroller -->
-    <link href="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
-
-    <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -57,11 +30,11 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <%= image_tag 'img.jpg', alt:"...", class:"img-circle profile_img" %>
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span>Seja Bem-Vindo,</span>
+                <h2>Thiago Marques</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -201,7 +174,8 @@
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="images/img.jpg" alt="">John Doe
+                      <%= image_tag 'img.jpg', alt:'' %>
+                      Thiago Marques
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -222,7 +196,9 @@
                     <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                       <li class="nav-item">
                         <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span 
+                            <%= image_tag 'img.jpg', alt:'Profile Image' %>
+                          </span>
                           <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -234,7 +210,9 @@
                       </li>
                       <li class="nav-item">
                         <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span class="image">
+                            <%= image_tag 'img.jpg', alt:'Profile Image' %>
+                          </span>
                           <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -246,7 +224,9 @@
                       </li>
                       <li class="nav-item">
                         <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span class="image">
+                          <%= image_tag 'img.jpg', alt:'Profile Image' %>
+                          </span>
                           <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -258,7 +238,9 @@
                       </li>
                       <li class="nav-item">
                         <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span class="image">
+                            <%= image_tag 'img.jpg', alt:'Profile Image' %>
+                          </span>
                           <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -289,7 +271,8 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Fixed Sidebar <small> Just add class <strong>menu_fixed</strong></small></h3>
+                <h1>LAYOUT USERS BACKOFFICE</h1>
+                <%= yield %>
               </div>
             </div>
           </div>
@@ -306,19 +289,9 @@
         <!-- /footer content -->
       </div>
     </div>
+    
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'users_backoffice' %>
 
-    <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-   <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="../vendors/nprogress/nprogress.js"></script>
-    <!-- jQuery custom content scroller -->
-    <script src="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
   </body>
 </html>
