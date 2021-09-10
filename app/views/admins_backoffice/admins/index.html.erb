@@ -24,12 +24,15 @@
               <td><%= admin.id %></td>
               <td><%= admin.email %></td>
               <td style="width: 100px">
-                    <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle btn-sm" do %>
-                    <i class="fa fa-edit"></i>
-                    <%end%>
-                <button type="button" class="btn btn-danger btn-circle btn-sm">
-                  <i class="fa fa-minus"></i>
-                </button>
+                
+                <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle btn-sm" do %>
+                <i class="fa fa-edit"></i>
+                <%end%>
+                
+                <%= link_to admins_backoffice_admin_path(admin), method: :delete, class:"btn btn-danger btn-circle btn-sm", data: { confirm: "Tem certeza que deseja excluir, seu filho da puta?" } do %>
+                <i class="fa fa-minus"></i>
+                <%end%>
+              
               </td>
           </tr>
           <% end %>
