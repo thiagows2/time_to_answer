@@ -33,21 +33,21 @@
                         
                             <div class="form-group">
                                 <%= form.label :description %>
-                                <%= form.text_field :description, class:"form-control", placeholder:"Descrição do Assunto/Área" %>
+                                <%= form.text_field :description, class:"form-control", placeholder: t('attributes.placeholders.subject_description') %>
                             </div>
 
                             <button type="submit" class="btn btn-success btn-icon-split">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-check"></i>
                                 </span>
-                                <span class="text">Confirmar Alterações</span>
+                                <span class="text"><%= t('attributes.buttons.confirmation') %></span>
                             </button>
                             
                             <%= link_to admins_backoffice_admins_path, class:"btn btn-danger btn-icon-split" do %>
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Descartar Alterações</span>
+                                <span class="text"><%= t('attributes.buttons.ignore') %></span>
                             <%end%>
                         <%end%>
                     </div>
