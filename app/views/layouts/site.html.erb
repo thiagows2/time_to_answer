@@ -27,6 +27,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
+        <%= form_with(url: site_search_path, local: true, method: :get, class:"form-inline") do |form| %>
+          <%= form.text_field :term, class:"form-control mr-sm-2", placeholder:"Search"%>
+          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Pesquisar</button>
+        <% end %>
         <ul class="navbar-nav mr-auto"></ul>
         <ul class="navbar-nav mr-right">
           <% unless user_signed_in? %>
