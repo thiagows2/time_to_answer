@@ -20,46 +20,43 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body >
     <div class="container">  
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <%= link_to 'Time to Answer', root_path, class:"navbar-brand" %>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <%= form_with(url: site_search_path, local: true, method: :get, class:"form-inline") do |form| %>
-            <%= form.text_field :term, class:"form-control mr-sm-2", placeholder:"Search"%>
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Pesquisar</button>
-          <% end %>
-          <ul class="navbar-nav mr-auto"></ul>
-          <ul class="navbar-nav mr-right">
-            <% unless user_signed_in? %>
-              <li nav-item><%= link_to 'Entrar', new_user_session_path, class:"nav-link" %></li>
-              <li nav-item><%= link_to 'Cadastrar-se', new_user_registration_path, class:"nav-link" %></li>
-            <% else%>
-              <div class="dropdown">
-                <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <%= link_to users_backoffice_welcome_index_path, class:"dropdown-item" do %>
-                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Perfil
-                    <% end %>
-                     <div class="dropdown-divider"></div>
-                    <%= link_to destroy_user_session_path, class:"dropdown-item", method: :delete do %>
-                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Sair
-                    <% end %>
-                </div>
-              </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid">  
+          <%= link_to 'Time to Answer', root_path, class:"navbar-brand" %>
+            <%= form_with(url: site_search_path, local: true, method: :get, class:"form-inline") do |form| %>
+              <%= form.text_field :term, class:"form-control mr-sm-2", placeholder:"Search"%>
+              <button class="btn btn-light" type="submit">Pesquisar</button>
             <% end %>
-          </ul>
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav mr-right">
+              <% unless user_signed_in? %>
+                <li nav-item><%= link_to 'Entrar', new_user_session_path, class:"nav-link" %></li>
+                <li nav-item><%= link_to 'Cadastrar-se', new_user_registration_path, class:"nav-link" %></li>
+              <% else%>
+                <div class="dropdown">
+                  <div class="dropdown">
+                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <%= link_to users_backoffice_welcome_index_path, class:"dropdown-item" do %>
+                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Perfil
+                      <% end %>
+                       <div class="dropdown-divider"></div>
+                      <%= link_to destroy_user_session_path, class:"dropdown-item", method: :delete do %>
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Sair
+                      <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
         </div>
       </nav>
-      <%= yield %>
-   </div>
     
+   </div>
+      <%= yield %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
@@ -79,5 +76,4 @@
     
   </body>
 </html>
-
 
