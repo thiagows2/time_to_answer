@@ -12,7 +12,12 @@
 <% @questions.each do |question| %>
   <%= form_with url: site_answer_path do |form| %>
     <div class="card">
-      <h3 class="card-header"> <%= question.description %></h3>
+      <h3 class="card-header"> 
+        <span class="btn btn-primary btn-sm">
+          <%= question.subject.description %>
+        </span>
+        <%= question.description %>
+      </h3>
       <div class="card-body">
         <ul>
           <% question.answers.each do |answer| %>
