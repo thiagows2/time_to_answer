@@ -1,5 +1,5 @@
-
-<main role="main" class="container">
+</br>
+<main role="main">
   <div class="jumbotron">
     <% unless params[:term] %>
       <h3>Últimas perguntas cadastradas...</h3>
@@ -14,7 +14,7 @@
     <div class="card">
       <h3 class="card-header"> 
         <span class="btn btn-primary btn-sm">
-          <%= question.subject.description %>
+          <%= link_to question.subject.description, site_search_subject_path(question.subject_id), style:"color: white" %>
         </span>
         <%= question.description %>
       </h3>

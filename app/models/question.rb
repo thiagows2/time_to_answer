@@ -7,6 +7,12 @@ class Question < ApplicationRecord
   paginates_per 10
   
   # Scopes são usados em search's
+  scope :_search_subject_, -> (page, term){
+  includes(:answers)
+  .where(subject_id: subject_id)
+  .page(page)
+  }
+
   scope :search, -> (page, term){
     includes(:answers)
     .where("lower(description) LIKE ?", "%#{term.downcase}%")
